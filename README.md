@@ -1,6 +1,6 @@
 # MLX BitNet FastAPI
 
-FastAPI service that proxies requests to Docker Model Runner for `(mlx-community/bitnet-b1.58-2B-4T)[https://huggingface.co/mlx-community/bitnet-b1.58-2B-4T]` on Apple Silicon.
+FastAPI service that proxies requests to Docker Model Runner for `[mlx-community/bitnet-b1.58-2B-4T](https://huggingface.co/mlx-community/bitnet-b1.58-2B-4T)` on Apple Silicon.
 
 ## Prerequisites
 
