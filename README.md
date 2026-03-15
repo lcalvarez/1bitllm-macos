@@ -19,6 +19,7 @@ FastAPI service that proxies requests to Docker Model Runner for `[mlx-community
 1. Enable Docker Model Runner:
 
    ```bash
+   just install-runner
    just enable-runner
    ```
 
