@@ -14,11 +14,6 @@ FastAPI service that proxies requests to Docker Model Runner for `mlx-community/
 - `uv` installed if you want to run the app locally outside Docker
 - - `brew install uv`
 
-## Do you need `uv`?
-
-- Yes, if you want to run `uv sync` or `just run-local`
-- No, if you only plan to use `docker compose` and `just` commands for the containerized flow
-
 ## Setup
 
 1. Enable Docker Model Runner:
