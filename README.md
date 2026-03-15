@@ -1,6 +1,6 @@
 # MLX BitNet FastAPI
 
-FastAPI service that proxies requests to Docker Model Runner for `mlx-community/bitnet-b1.58-2B-4T` on Apple Silicon.
+FastAPI service that proxies requests to Docker Model Runner for `[mlx-community/bitnet-b1.58-2B-4T](https://huggingface.co/mlx-community/bitnet-b1.58-2B-4T)` on Apple Silicon.
 
 ## Prerequisites
 
@@ -43,11 +43,11 @@ just health
 ## Example request
 
 ```bash
-just generate hello
+just generate "hello"
 ```
 
 ```bash
-just stream hello
+just stream "hello"
 ```
 
 ```bash
@@ -55,14 +55,9 @@ just generate "Answer in one sentence: what is FastAPI?"
 ```
 
 ```bash
-just generate "hello" max_tokens=32 temperature=0.1 stop="Response:"
+just generate "hello" 32 0.1 0.95 "Response:"
 ```
 
-## Local development
-
-If you want to run the FastAPI app directly on your machine instead of in Docker:
-
 ```bash
-uv sync
-just run-local
+just stream "Write a haiku about Apple Silicon" 48 0.7
 ```

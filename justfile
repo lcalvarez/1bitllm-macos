@@ -60,9 +60,9 @@ generate prompt="hello" max_tokens="64" temperature="0.2" top_p="0.95" stop="<|i
     payload=$(jq -nc \
       --arg prompt '{{prompt}}' \
       --arg stop '{{stop}}' \
-      --argjson max_tokens {{max_tokens}} \
-      --argjson temperature {{temperature}} \
-      --argjson top_p {{top_p}} \
+      --argjson max_tokens '{{max_tokens}}' \
+      --argjson temperature '{{temperature}}' \
+      --argjson top_p '{{top_p}}' \
       '{prompt: $prompt, max_tokens: $max_tokens, temperature: $temperature, top_p: $top_p} + (if $stop == "" then {} else {stop: [$stop]} end)'); \
     curl -s http://localhost:8000/generate \
       -H 'Content-Type: application/json' \
@@ -72,10 +72,10 @@ stream prompt="hello" max_tokens="64" temperature="0.2" top_p="0.95" stop="<|im_
     payload=$(jq -nc \
       --arg prompt '{{prompt}}' \
       --arg stop '{{stop}}' \
-      --argjson max_tokens {{max_tokens}} \
-      --argjson temperature {{temperature}} \
-      --argjson top_p {{top_p}} \
+      --argjson max_tokens '{{max_tokens}}' \
+      --argjson temperature '{{temperature}}' \
+      --argjson top_p '{{top_p}}' \
       '{prompt: $prompt, max_tokens: $max_tokens, temperature: $temperature, top_p: $top_p} + (if $stop == "" then {} else {stop: [$stop]} end)'); \
     curl -N -s http://localhost:8000/generate/stream \
       -H 'Content-Type: application/json' \
-      -d "$payload"
+      -d "$payload" | jq .
